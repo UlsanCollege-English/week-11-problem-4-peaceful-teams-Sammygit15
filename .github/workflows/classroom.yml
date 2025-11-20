@@ -21,7 +21,9 @@ jobs:
       uses: classroom-resources/autograding-python-grader@v1
       with:
         timeout: 10
-        setup-command: 'export PYTHONPATH=.'
+        setup-command: |
+          pip install -r requirements.txt
+          export PYTHONPATH=.
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
